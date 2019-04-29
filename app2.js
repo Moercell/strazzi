@@ -55,18 +55,18 @@ function findPeaks(pcmdata, samplerate) {
             for (let j = i * 661; j < (i +1) * 661; j++) {
                 fullfeq = fullfeq + parseFloat(pcmdata[j]);
             }
-            fullfeq = fullfeq;
             pcmnew.push(fullfeq);
+            song.push(time = {
+                vol: max,
+                feq: pcmnew
+            });
         }
         
 
         // Print out mini equalizer on commandline
         console.log(bars, max, time);
         //console.log(pcmdata);
-        song.push(time = {
-            vol: max,
-            feq: pcmnew
-        });
+
         prevmax = max;
         max = 0;
         index += step;
